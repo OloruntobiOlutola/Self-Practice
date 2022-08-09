@@ -5,16 +5,11 @@ const app = express();
 app.use(express.json());
 
 app.get("/path", (req, res) => {
-    //console.log("Working fine");
-    //res.send(`Hello ${req.params.name}`)
-
-    const {fullname, twitterUrl, linkedinUrl, phoneNum, DOB, desc} = req.body;
-    res.send(`Hello ${fullname}, you submitted the following detatails 
-        \nTwitter Url: ${twitterUrl}\nLinkein Url: ${linkedinUrl}
-        \nPhone Number: ${phoneNum}\nDate of Birth: ${DOB}
-        \nThe word that describe's you: ${desc}
-        \nThank You!`)
-
+    console.log("Working fine");
+    res.status(200).json({
+        status: 'success',
+        message: 'From the get method'
+    })
 })
 
 app.post("/", (req, res) => {
